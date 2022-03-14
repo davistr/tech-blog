@@ -3,6 +3,7 @@ const { User, Post, Comment } = require("../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
+    attributes: ["id", "title", "post_contents", "created_at"],
     include: [User],
   })
     .then((dbPostData) => {
