@@ -14,7 +14,7 @@
 
 ## Screenshot(s)
 
-![](images/app_screenshot.jpg)
+![](public/images/app_screenshot.jpg)
 
 ## Deployed application link:
 
