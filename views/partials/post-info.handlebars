@@ -1,10 +1,10 @@
 <article class="post">
   <div class="title">
-    <span>{{title}}</span>
+    <a href="/post/{{id}}"><span>{{title}}</span></a>
   </div>
   <div class="meta">
     {{post_contents}}
-    by {{user.username}} on {{format_date created_at}}
-    |
+    by <span id="post-author">{{user.username}}</span> on {{format_date created_at}}
+    
   </div>
 </article>

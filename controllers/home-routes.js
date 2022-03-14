@@ -31,7 +31,10 @@ router.get("/post/:id", (req, res) => {
     .then((dbPostData) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
-        res.render("single-post", { post });
+        res.render("single-post", {
+          post,
+          loggedIn: req.session.loggedIn,
+        });
       } else {
         res.status(404).json({ message: "No post found with this id" });
       }
