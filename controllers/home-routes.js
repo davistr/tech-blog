@@ -1,7 +1,4 @@
 const router = require("express").Router();
-const res = require("express/lib/response");
-const { truncate } = require("lodash");
-const sequelize = require("../config/connection");
 const { User, Post, Comment } = require("../models");
 
 router.get("/", (req, res) => {
@@ -10,7 +7,10 @@ router.get("/", (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("homepage", { posts });
+      res.render("homepage", {
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -33,7 +33,7 @@ router.get("/post/:id", (req, res) => {
         const post = dbPostData.get({ plain: true });
         res.render("single-post", { post });
       } else {
-        res.status(404).end();
+        res.status(404).json({ message: "No post found with this id" });
       }
     })
     .catch((err) => {

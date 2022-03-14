@@ -7,25 +7,22 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: white;
   font-weight: bold;
   transition: color 0.1s;
-}
-
-a:hover {
-  color: #3486eb;
+  padding: 16px;
 }
 
 .hero {
   background-color: #225ca3;
   border: 0;
-  padding: 1%;
+  padding: 2%;
   color: white;
   font-weight: bold;
   transition: background-color 0.1s;
@@ -34,7 +31,7 @@ a:hover {
 }
 
 button {
-  background-color: #225ca3;
+  background-color: #22a37c;
   border: 0;
   padding: 1%;
   color: white;
@@ -100,27 +97,28 @@ header h1 {
   font-size: 1em;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
+
 main {
   flex: 1;
   padding: 2% 4%;
 }
 
-.btn-no-style {
+.btn-logout {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: white;
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
   margin-left: 16px;
-}
-
-.btn-no-style:hover {
-  background: none;
-  color: #3486eb;
 }
 
 .delete-post-btn {
@@ -128,7 +126,7 @@ main {
 }
 
 .delete-post-btn:hover {
-  background-color: #ff643d;
+  background-color: #22a37c;
 }
 
 .post {
@@ -136,24 +134,21 @@ main {
   line-height: 150%;
 }
 
+.post-cards {
+  background-color: #22a37c;
+}
+
 .post .title span {
-  font-style: italic;
-  font-size: 90%;
-  color: #7d7d7d;
+  font-weight: bolder;
+  font-size: 110%;
+  color: #22a37c;
+  border-bottom: #413d3d solid 3px;
 }
 
 .edit-link {
-  display: block;
+  display: inline;
   margin: -1.5% 0 2% 0;
-}
-
-.upvote-btn {
-  background-color: #197d0f;
-  transition: background-color 0.1s;
-}
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
+  color: #225ca3;
 }
 
 .comment-form {
@@ -170,7 +165,7 @@ main {
 }
 
 .comment .meta {
-  font-size: 90%;
+  font-size: 85%;
   margin-bottom: 0.5%;
   opacity: 0.6;
 }

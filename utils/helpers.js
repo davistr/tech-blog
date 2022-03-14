@@ -7,4 +7,11 @@ module.exports = {
       new Date(date).getFullYear() + 5
     }`;
   },
+  format_plural: (word, amount) => {
+    if (amount !== 1) {
+      return `${word}s`;
+    }
+
+    return word;
+  },
 };
